@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Тестовая страница для Яндекс.Метрики</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2b7cff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    button {
+      padding: 12px 20px;
+      margin: 10px 0;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      background-color: #2b7cff;
+      color: white;
+    }
+
+    button:hover {
+      background-color: #1f5fcc;
+    }
+
+    .message {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #e6f0ff;
+      border-left: 4px solid #2b7cff;
+      display: none;
+    }
+
+    .counter {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Тест метрикии</h1>
+  <p>взаимодействия</p>
+</header>
+
+<main>
+  <h2>Интерактивные элементы</h2>
+
+  <button onclick="showMessage()">Показать сообщение</button>
+  <div id="message" class="message">
+    Сообщение появилось после нажатия кнопки.
+  </div>
+
+  <button onclick="incrementCounter()">Нажать кнопку</button>
+  <div class="counter">
+    Количество нажатий: <span id="count">0</span>
+  </div>
+
+  <button onclick="changeColor()">Изменить цвет фона</button>
+
+  <p style="margin-top: 40px;">
+    прокрут страницы
+  </p>
+
+  <div style="height: 600px;"></div>
+</main>
+
+<footer>
+  Метрика
+</footer>
+
+<script>
+  function showMessage() {
+    document.getElementById('message').style.display = 'block';
+  }
+
+  let count = 0;
+  function incrementCounter() {
+    count++;
+    document.getElementById('count').textContent = count;
+  }
+
+  function changeColor() {
+    document.body.style.backgroundColor =
+            document.body.style.backgroundColor === 'rgb(244, 246, 248)'
+                    ? '#e8ffe8'
+                    : '#f4f6f8';
+  }
+</script>
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){
+    m[i]=m[i]||function(){
+      (m[i].a=m[i].a||[]).push(arguments)
+    };
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {
+      if (document.scripts[j].src === r) { return; }
+    }
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],
+            k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+  })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(105842419, "init", {
+    clickmap:true,
+    trackLinks:true,
+    accurateTrackBounce:true,
+    webvisor:true,
+    trackHash:true
+  });
+</script>
+<noscript>
+  <div>
+    <img src="https://mc.yandex.ru/watch/105842419"
+         style="position:absolute; left:-9999px;" alt="" />
+  </div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+
+</body>
+</html>
